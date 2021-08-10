@@ -3,6 +3,6 @@ describe('App', function() {
       cy.visit('http://localhost:8000') 
       cy.contains('Welcome')
       cy.contains('Messages').click
-      cy.contains('Send!')
+      cy.contains('Messages')
     })
   })
