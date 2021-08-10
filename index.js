@@ -9,6 +9,11 @@ const { PORT, inProduction } = require('@util/common')
 
 const app = express()
 
+// Not sure if this is the best place for health check
+app.get('/health', (req, res) => {
+  res.send('ok')
+})
+
 // Require is here so we can delete it from cache when files change (*)
 app.use('/api', (req, res, next) => require('@root/server')(req, res, next)) // eslint-disable-line
 
@@ -59,5 +64,6 @@ if (!inProduction) {
 }
 
 app.listen(PORT, () => {
+  // eslint-disable-next-line no-console
   console.log(`Started on port ${PORT}`)
 })
