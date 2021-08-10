@@ -8,7 +8,9 @@
     "start": "cross-env NODE_ENV=production node index.js",
     "build": "webpack --mode=production",
     "lint": "eslint .",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cypress:open": "cypress open",
+    "test:e2e": "cypress run"
   },
   "engines": {
     "node": ">=10.15"
@@ -53,6 +55,7 @@
     "webpack-cli": "^3.3.12"
   },
   "devDependencies": {
+    "cypress": "^8.2.0",
     "nodemon": "^2.0.12",
     "webpack-dev-middleware": "^3.7.3",
     "webpack-dev-server": "^3.11.2",
